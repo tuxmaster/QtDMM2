@@ -10,8 +10,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt 5.15 COMPONENTS Core Gui Widgets REQUIRED)
-message(STATUS "Using Qt ${QtCore_VERSION}")
+find_package(Qt5 5.15 COMPONENTS Core Gui Widgets REQUIRED)
+message(STATUS "Using Qt ${Qt5Core_VERSION}")
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
@@ -64,7 +64,7 @@ set(BIN_TARGET_PATH "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}" CACHE PATH
 
 message(STATUS "Install binary to ${BIN_TARGET_PATH}")
 
-qt_add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} )
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt::Core Qt::Gui Qt::Widgets)
 

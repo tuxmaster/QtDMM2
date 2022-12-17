@@ -9,46 +9,46 @@
 // License  version 2.0 as published   by the Free Software  Foundation
 // and appearing  in the file LICENSE.GPL included  in the packaging of
 // this file.
-// 
-// This file is provided AS IS with  NO WARRANTY OF ANY KIND, INCLUDING 
-// THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+//
+// This file is provided AS IS with  NO WARRANTY OF ANY KIND, INCLUDING
+// THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
 // PURPOSE.
 //----------------------------------------------------------------------
 // Copyright 2006-2007 Matthias Toussaint
 //======================================================================
 
-#include <unitstring.h>
+#include "unitstring.h"
 
 QString UnitString::toQString( const QString & ascii )
 {
   int index = 0;
-  
+
   QString ret;
   if (ascii[0] == 'k' ||
-      ascii[0] == 'm' ||
-      ascii[0] == 'M' ||
-      ascii[0] == 'G' ||
-      ascii[0] == 'n' ||
-      ascii[0] == 'p')
+	  ascii[0] == 'm' ||
+	  ascii[0] == 'M' ||
+	  ascii[0] == 'G' ||
+	  ascii[0] == 'n' ||
+	  ascii[0] == 'p')
   {
-    ret = ascii[0];
-    ++index;
+	ret = ascii[0];
+	++index;
   }
   else if (ascii[0] == 'u')
   {
-    ret = "\265";
-    ++index;
+	ret = "\265";
+	++index;
   }
-  
+
   if (ascii.mid( index ) == "Ohm")
   {
-    ret += QChar( 0x3a9 );
+	ret += QChar( 0x3a9 );
   }
   else if (ascii.mid( index ) == "C")
   {
-    ret += "\260C";
+	ret += "\260C";
   }
   else ret += ascii.mid( index );
-  
+
   return ret;
 }
