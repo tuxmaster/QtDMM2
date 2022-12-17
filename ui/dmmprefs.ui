@@ -1,0 +1,584 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>575</width>
+    <height>641</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label" >
+       <property name="text" >
+        <string>Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="name" />
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QComboBox" name="choice" >
+       <item>
+        <property name="text" >
+         <string>Manual Settings</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Voltcraft ME-32</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="filename" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="readOnly" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="open" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="toolTip" >
+        <string>Open</string>
+       </property>
+       <property name="text" >
+        <string>...</string>
+       </property>
+       <property name="icon" >
+        <iconset>../../../../../../../opt/kde3/share/icons/crystalsvg/22x22/actions/fileopen.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>22</width>
+         <height>22</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="save" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="toolTip" >
+        <string>Save</string>
+       </property>
+       <property name="text" >
+        <string>...</string>
+       </property>
+       <property name="icon" >
+        <iconset>../../../../../../../opt/kde3/share/icons/crystalsvg/22x22/actions/filesave.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>22</width>
+         <height>22</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="serialGroup" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="title" >
+      <string>Serial Port</string>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="2" column="2" colspan="3" >
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QCheckBox" name="rts" >
+          <property name="text" >
+           <string>RTS</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="dtr" >
+          <property name="text" >
+           <string>DTR</string>
+          </property>
+          <property name="checked" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="dsr" >
+          <property name="text" >
+           <string>DSR</string>
+          </property>
+          <property name="checked" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="cts" >
+          <property name="text" >
+           <string>CTS</string>
+          </property>
+          <property name="checked" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="label_2" >
+        <property name="text" >
+         <string>&amp;Port:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy" >
+         <cstring>port</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QComboBox" name="port" >
+        <item>
+         <property name="text" >
+          <string>/dev/ttyS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>/dev/ttyUSB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>/dev/usb/ttyUSB</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="2" >
+       <widget class="QSpinBox" name="portNumber" />
+      </item>
+      <item row="0" column="3" >
+       <widget class="QLabel" name="label_3" >
+        <property name="text" >
+         <string>Baud &amp;Rate:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy" >
+         <cstring>baudRate</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4" >
+       <widget class="QComboBox" name="baudRate" >
+        <item>
+         <property name="text" >
+          <string>300</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>600</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>1200</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>1800</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>2400</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>4800</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>9600</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_4" >
+        <property name="text" >
+         <string>&amp;Bits:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy" >
+         <cstring>bits</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QComboBox" name="bits" >
+        <item>
+         <property name="text" >
+          <string>5 Bits</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>6 Bits</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>7 Bits</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>8 Bits</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="3" >
+       <widget class="QLabel" name="label_5" >
+        <property name="text" >
+         <string>&amp;Stop Bits:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy" >
+         <cstring>stopBits</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4" >
+       <widget class="QComboBox" name="stopBits" >
+        <item>
+         <property name="text" >
+          <string>1 Stop Bit</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>2 Stop Bits</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="label_6" >
+        <property name="text" >
+         <string>Pari&amp;ty:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy" >
+         <cstring>parity</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="QComboBox" name="parity" >
+        <item>
+         <property name="text" >
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Even</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Odd</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="protocolGroup" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="title" >
+      <string>Protocol</string>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="1" column="2" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>331</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0" colspan="3" >
+       <widget class="QComboBox" name="comboBox_2" >
+        <item>
+         <property name="text" >
+          <string>Metex 14 bytes ASCII continuous</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Metex 15 bytes ASCII continuous</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Metex 14 bytes ASCII polling</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Voltcraft VC820 14 bytes binary continuous</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Metex M9803R 11 bytes binary continuous</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>UV Monitor (Radek Liboska)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>PeakTech 10 bytes ASCII continuous</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Escort 97 21 bytes binary continuous</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Voltcraft GDM703 26 bytes ASCII continuous</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QSpinBox" name="spinBox" >
+        <property name="maximum" >
+         <number>4</number>
+        </property>
+        <property name="minimum" >
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_7" >
+        <property name="text" >
+         <string>&amp;Number of values:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>spinBox</cstring>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="displayGroup" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="title" >
+      <string>Display</string>
+     </property>
+     <layout class="QHBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_8" >
+        <property name="text" >
+         <string>&amp;Display Range:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>displayGroup</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="display" >
+        <item>
+         <property name="text" >
+          <string>3 1/2 (2000 Counts)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>3 3/4 (4000 Counts)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>4 1/2 (20000 Counts)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>4 3/4 (40000 Counts)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>5 1/2 (200000 Counts)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>5 3/4 (400000 Counts)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>6 (1000000 Counts)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>21</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="infoText" >
+     <property name="text" >
+      <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:12pt; font-weight:400; font-style:normal; text-decoration:none;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">If you have a multimeter that is not listed above and you find manual settings that work, please report to &lt;span style=" text-decoration: underline;">qtdmm@mtoussaint.de&lt;/span> preferably by sending the configuration file. This way future users of this device can benefit from your help.&lt;/p>&lt;/body>&lt;/html></string>
+     </property>
+     <property name="textFormat" >
+      <enum>Qt::RichText</enum>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

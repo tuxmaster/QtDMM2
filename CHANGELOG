@@ -1,0 +1,11 @@
+01/09/2007 0.2
+           - Bugfixes and improved handling of ME-32 and VC820
+           - Initial support for VC940 
+           
+23/02/2007 0.1
+           - Initial release version 0.1
+
+-- 01/09/2007
+   Matthias Toussaint
+   <qtdmm@mtoussaint.de>
+ 
