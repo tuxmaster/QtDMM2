@@ -17,14 +17,12 @@
 // Copyright 2007 Matthias Toussaint
 //======================================================================
 
-#include <QPainter>
 #include "plotwid.h"
 #include "plotscale.h"
 #include <cmath>
 #include <iostream>
 
-PlotWid::PlotWid( QWidget *parent ) :
-  QWidget( parent )
+PlotWid::PlotWid( QWidget *parent ) : QWidget( parent )
 {
 }
 
@@ -36,36 +34,27 @@ PlotWid::~PlotWid()
 void PlotWid::freeData()
 {
   for (PlotDataList::iterator it=m_data.begin(); it!=m_data.end(); ++it)
-  {
 	delete *it;
-  }
   m_data.clear();
 }
 
 void PlotWid::create( int numItems, int size )
 {
   freeData();
-
   for (int i=0; i<numItems; ++i)
-  {
 	m_data += new PlotData( size );
-  }
 }
 
 void PlotWid::resize( int size )
 {
   for (PlotDataList::iterator it=m_data.begin(); it!=m_data.end(); ++it)
-  {
 	(*it)->resize( size );
-  }
 }
 
 void PlotWid::reset()
 {
   for (PlotDataList::iterator it=m_data.begin(); it!=m_data.end(); ++it)
-  {
 	(*it)->reset();
-  }
 }
 
 PlotData *PlotWid::data( int index )
@@ -92,7 +81,8 @@ void PlotWid::paintEvent( QPaintEvent * )
 {
   if (numItems() == 0) return;
 
-  QTime t; t.start();
+  QTime t;
+  t.start();
 
   QPainter p;
   p.begin( this );
@@ -119,10 +109,8 @@ void PlotWid::paintEvent( QPaintEvent * )
 	grid.paint( &p, width()-80, data(i)->name(), data(i)->unit() );
 
 	for (int x=0; x<data(i)->numItems(); ++x)
-	{
-	  arr[x] = QPoint( lrintf( (float)x*xFac ),
-					   lrintf( (grid.max()-data(i)->at(x)->value)*yFac ) );
-	}
+		arr[x] = QPoint( lrintf( (float)x*xFac ), lrintf( (grid.max()-data(i)->at(x)->value)*yFac ) );
+
 	//p.setRenderHint( QPainter::Antialiasing, true );
 	p.setPen( QPen( Qt::blue, 1.5 ) );
 	p.drawPolyline( arr, data(i)->numItems() );

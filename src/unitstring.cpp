@@ -41,14 +41,11 @@ QString UnitString::toQString( const QString & ascii )
   }
 
   if (ascii.mid( index ) == "Ohm")
-  {
 	ret += QChar( 0x3a9 );
-  }
   else if (ascii.mid( index ) == "C")
-  {
 	ret += "\260C";
-  }
-  else ret += ascii.mid( index );
+  else
+	  ret += ascii.mid( index );
 
   return ret;
 }

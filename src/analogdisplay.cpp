@@ -18,10 +18,6 @@
 //======================================================================
 
 #include "analogdisplay.h"
-#include <QPainter>
-#include <QPaintEvent>
-#include <QTimerEvent>
-#include <QResizeEvent>
 #include <cmath>
 #include "lcdnumber.h"
 #include "unitstring.h"

@@ -20,15 +20,12 @@
 #include "plotdata.h"
 #include <iostream>
 
-PlotData::PlotData( int size ) :
-  m_ringBuffer( 0 )
+PlotData::PlotData( int size ) : m_ringBuffer( 0 )
 {
   resize( size );
 }
 
-PlotData::PlotData( const QString & name, int size ) :
-	m_name( name ),
-  m_ringBuffer( 0 )
+PlotData::PlotData( const QString & name, int size ) : m_name( name ), m_ringBuffer( 0 )
 {
   resize( size );
 }

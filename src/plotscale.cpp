@@ -18,7 +18,6 @@
 //======================================================================
 
 #include "plotscale.h"
-#include <QPainter>
 #include <cmath>
 #include <iostream>
 
@@ -48,8 +47,7 @@ void PlotScale::setup( int length, float min, float max )
   //    << std::endl;
 }
 
-void PlotScale::paint( QPainter *p, int width,
-					   const QString & name, const QString & unit )
+void PlotScale::paint( QPainter *p, int width, const QString & name, const QString & unit )
 {
   float fac = (float)m_length / (m_max-m_min);
 

@@ -9,9 +9,9 @@
 // License  version 2.0 as published   by the Free Software  Foundation
 // and appearing  in the file LICENSE.GPL included  in the packaging of
 // this file.
-// 
-// This file is provided AS IS with  NO WARRANTY OF ANY KIND, INCLUDING 
-// THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+//
+// This file is provided AS IS with  NO WARRANTY OF ANY KIND, INCLUDING
+// THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
 // PURPOSE.
 //----------------------------------------------------------------------
 // Copyright 2007 Matthias Toussaint
@@ -20,17 +20,17 @@
 #ifndef PLOTGRID_HH
 #define PLOTGRID_HH
 
-class QPainter;
+#include <QtGui>
 
 class PlotGrid
 {
 public:
   PlotGrid();
   ~PlotGrid();
-      
-  void paint( QPainter *, const QRect & rect, float min, float max, 
-              unsigned start, unsigned length );
-  
+
+  void paint( QPainter *, const QRect & rect, float min, float max,
+			  unsigned start, unsigned length );
+
 };
 
 #endif // PLOTGRID_HH

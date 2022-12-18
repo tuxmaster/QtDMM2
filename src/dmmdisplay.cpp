@@ -18,16 +18,16 @@
 //======================================================================
 
 #include "dmmdisplay.h"
-#include <cmath>
 #include "unitstring.h"
 
+#include <cmath>
 #include <iostream>
 
 #include "xpm/diode.xpm"
 #include "xpm/diode_small.xpm"
 
-QPixmap *DMMDisplay::s_diodePix = 0;
-QPixmap *DMMDisplay::s_diodeSmallPix = 0;
+QPixmap *DMMDisplay::s_diodePix = nullptr;
+QPixmap *DMMDisplay::s_diodeSmallPix = nullptr;
 
 DMMDisplay::DMMDisplay( QWidget *parent ) :
   QWidget( parent ),

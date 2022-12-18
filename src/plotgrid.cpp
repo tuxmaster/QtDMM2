@@ -9,16 +9,16 @@
 // License  version 2.0 as published   by the Free Software  Foundation
 // and appearing  in the file LICENSE.GPL included  in the packaging of
 // this file.
-// 
-// This file is provided AS IS with  NO WARRANTY OF ANY KIND, INCLUDING 
-// THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+//
+// This file is provided AS IS with  NO WARRANTY OF ANY KIND, INCLUDING
+// THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
 // PURPOSE.
 //----------------------------------------------------------------------
 // Copyright 2007 Matthias Toussaint
 //======================================================================
 
-#include <QPainter>
 
+#include "plotgrid.h"
 PlotGrid::PlotGrid()
 {
 }
@@ -27,8 +27,8 @@ PlotGrid::~PlotGrid()
 {
 }
 
-void PlotGrid::paint( QPainter *p, const QRect & rect, float min, float max, 
-                      unsigned start, unsigned length )
+void PlotGrid::paint( QPainter *p, const QRect & rect, float min, float max,
+					  unsigned start, unsigned length )
 {
   p->drawRect( 0, 0, rect.width(), rect.height() );
 }

@@ -21,14 +21,14 @@
 #include "xpm/numbers.xpm"
 #include "xpm/numbers_small.xpm"
 
-QPixmap *LCDNumber::s_numbers = 0;
-QPixmap *LCDNumber::s_numbers_small = 0;
+QPixmap *LCDNumber::s_numbers = nullptr;
+QPixmap *LCDNumber::s_numbers_small = nullptr;
 
 LCDNumber::LCDNumber( bool small, int numDigits ) :
   m_small( small ),
   m_numDigits( numDigits )
 {
-  if (0 == s_numbers)
+  if (!s_numbers)
   {
 	s_numbers = new QPixmap( (const char **)numbers_xpm );
 	s_numbers_small = new QPixmap( (const char **)numbers_small_xpm );

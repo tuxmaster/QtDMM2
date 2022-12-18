@@ -17,17 +17,11 @@
 // Copyright 2007 Matthias Toussaint
 //======================================================================
 
-#include <QPainter>
-#include <QPaintEvent>
-#include <QTimerEvent>
-#include <QResizeEvent>
-
 #include "digitaldisplay.h"
 #include "lcdnumber.h"
 #include "unitstring.h"
 
 #include <cmath>
-
 #include <iostream>
 
 DigitalDisplay::DigitalDisplay( QWidget *parent ) :
