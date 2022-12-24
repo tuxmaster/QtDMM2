@@ -10,7 +10,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt5 5.15 < 6 COMPONENTS Core Gui Widgets REQUIRED)
+find_package(Qt5 5.15 COMPONENTS Core Gui Widgets REQUIRED)
 message(STATUS "Using Qt ${Qt5Core_VERSION}")
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
