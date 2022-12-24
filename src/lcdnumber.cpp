@@ -107,7 +107,7 @@ void LCDNumber::draw( QPainter *p, int x, int y, const QString & digits ) const
 
   while (i<digits.length())
   {
-	int off = (int)digits[i].toAscii() - (int)'0';
+	int off = (int)digits[i].toLatin1() - (int)'0';
 
 	if (off >= 0 && off <= 9)
 	{
