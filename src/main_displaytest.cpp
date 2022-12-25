@@ -1,9 +1,8 @@
-#include <plotdata.h>
+#include "plotdata.h"
 #include <iostream>
-#include <QApplication>
-#include <plotwid.h>
-#include <analogdisplay.h>
-#include <digitaldisplay.h>
+#include "plotwid.h"
+#include "analogdisplay.h"
+#include "digitaldisplay.h"
 
 int main( int argc, char **argv )
 {

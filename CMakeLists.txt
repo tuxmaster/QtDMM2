@@ -15,6 +15,13 @@ message(STATUS "Using Qt ${Qt5Core_VERSION}")
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+option(DISPLAYTEST "Displayt test modus" OFF)
+option(DIGITAL "Use digital scale" OFF)
+
+if((${DIGITAL}) AND (${DISPLAYTEST}))
+	message(FATAL_ERROR "DISPLAYTEST and DIGITAL are exclusive.")
+endif()
+
 set(UI_PATH ui)
 
 set (CPP_HEADER
@@ -40,7 +47,6 @@ set(CPP_SOURCES
   src/displaycolor.cpp
   src/dmmdisplay.cpp
   src/lcdnumber.cpp
-  src/main.cpp
   src/plotdata.cpp
   src/plotgrid.cpp
   src/plotscale.cpp
@@ -51,6 +57,19 @@ set(CPP_SOURCES
 set(UI_FILES
     ${UI_PATH}/dmmprefs.ui
 )
+
+if(${DISPLAYTEST})
+	message(STATUS "Using the display test mode.")
+	list(APPEND CPP_SOURCES "src/main_displaytest.cpp")
+else()
+	if(${DIGITAL})
+		message(STATUS "Using the digital scale.")
+		list(APPEND CPP_SOURCES "src/main_digital.cpp")
+	else()
+		message(STATUS "Using the analog scale.")
+		list(APPEND CPP_SOURCES "src/main_analog.cpp")
+	endif()
+endif()
 
 set(PROJECT_SOURCES
     ${CPP_HEADER}
