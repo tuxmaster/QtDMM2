@@ -36,14 +36,14 @@ QString UnitString::toQString( const QString & ascii )
   }
   else if (ascii[0] == 'u')
   {
-	ret = "\265";
+	ret = "µ";
 	++index;
   }
 
   if (ascii.mid( index ) == "Ohm")
-	ret += QChar( 0x3a9 );
+	ret += "Ω";
   else if (ascii.mid( index ) == "C")
-	ret += "\260C";
+	ret += "nC";
   else
 	  ret += ascii.mid( index );
 

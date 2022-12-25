@@ -76,7 +76,7 @@ void AnalogDisplay::drawBackground()
   p.drawText( 0, m_titleHeight, width(), height()-10-m_titleHeight,
 			  Qt::AlignCenter, "QtDMM 2" );
   p.drawText( 0, 10+m_titleHeight, width(), height()-10-m_titleHeight,
-			  Qt::AlignCenter, "\251 M.Toussaint" );
+			  Qt::AlignCenter, "© M.Toussaint" );
 
   if (m_showTitle)
   {
