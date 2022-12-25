@@ -198,7 +198,7 @@ void DigitalDisplay::drawBackground()
 	for (int i=0; i<=numCounts(); i+= step)
 	{
 	  QString str;
-	  str.sprintf( "%d", 10*i/step );
+	  str=QString("%1").arg(10*i/step );
 	  QRectF rect( 14.0+(i*m_barScale)-30.0, height()-30, 60, 12 );
 	  p.drawText( rect, Qt::AlignTop | Qt::AlignHCenter, str );
 	}
@@ -285,7 +285,7 @@ void DigitalDisplay::paintEvent( QPaintEvent * )
 
 	  double delta = 1000.0 * (m_maxValue-m_minValue);
 	  QString str;
-	  str.sprintf( "%g", delta );
+	  str=QString("%1").arg(delta);
 
 	  slcd.draw( &p, 4+m_minMaxOffset, 4+8+2*slcd.height(), str );
 
@@ -343,7 +343,7 @@ void DigitalDisplay::paintEvent( QPaintEvent * )
 	  }
 
 	  QString str;
-	  str.sprintf( "%g", m_averageCount );
+	  str=QString("%1").arg(m_averageCount );
 	  p.setFont( QFont( "Helvetica", 7 ) );
 	  p.drawText( 17, height()-38, str );
 	}

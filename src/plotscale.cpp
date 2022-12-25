@@ -71,7 +71,7 @@ void PlotScale::paint( QPainter *p, int width, const QString & name, const QStri
   {
 	int yPos = lrintf( (m_max-pos)*fac );
 	p->drawLine( -5, yPos, 0, yPos );
-	str.sprintf( "%g", pos*textFactor );
+	str=QString("%1").arg( pos*textFactor );
 	if (0==i)
 	{
 	  p->drawText( -100, yPos-5, 90, 20, Qt::AlignVCenter|Qt::AlignRight,

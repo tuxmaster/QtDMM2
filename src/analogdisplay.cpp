@@ -157,7 +157,7 @@ void AnalogDisplay::drawBackground()
 	  p.save();
 	  p.translate( ox, oy );
 	  p.rotate( (180.0*a)/M_PI );
-	  str.sprintf( "%d", (int)(scaleFac*i/step) );
+	  str=QString("%1").arg((int)(scaleFac*i/step) );
 	  p.drawText( -15, (int)rintf(-r-18), 30, 15, Qt::AlignCenter, str );
 	  p.restore();
 
@@ -226,7 +226,7 @@ void AnalogDisplay::drawBackground()
 	  p.save();
 	  p.translate( ox, oy );
 	  p.rotate( (180.0*a)/M_PI );
-	  str.sprintf( "%d", scaleFac*(i-numCounts()/2)/step );
+	  str=QString("%1").arg(scaleFac*(i-numCounts()/2)/step );
 	  p.drawText( -15, (int)rintf(-r-18), 30, 15, Qt::AlignCenter, str );
 	  p.restore();
 
@@ -235,7 +235,7 @@ void AnalogDisplay::drawBackground()
 		p.save();
 		p.translate( ox, oy );
 		p.rotate( -(180.0*a)/M_PI );
-		str.sprintf( "-%d", scaleFac*(i-numCounts()/2)/step );
+		str=QString("%1").arg(scaleFac*(i-numCounts()/2)/step );
 		p.drawText( -15, (int)rintf(-r-18), 30, 15, Qt::AlignCenter, str );
 		p.restore();
 	  }

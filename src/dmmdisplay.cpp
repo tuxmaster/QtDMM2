@@ -151,7 +151,7 @@ void DMMDisplay::timerEvent( QTimerEvent * )
   value = (double)(int)(value * 100.0);
   value /= 100.0;
 
-  m_value.sprintf( "%.1f", value*10.0 );
+  m_value=QString("%1").arg(value*10.0);
   setValue( m_value );
   update();
 }
@@ -238,7 +238,7 @@ void DMMDisplay::setValue( const QString & value )
   m_averageCount += 1.0;
 
   m_average = m_averageSum / m_averageCount;
-  m_averageString.sprintf( "%.1f", m_average/m_scale );
+  m_averageString=QString("%1").arg(m_average/m_scale );
 
   addToHistogram( m_counts );
 
