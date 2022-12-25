@@ -80,7 +80,7 @@ DMMDisplay::DMMDisplay( QWidget *parent ) :
 
   m_resetAction = new QAction( tr("Reset"), this );
 
-  connect( m_resetAction, SIGNAL( activated() ),
+  connect( m_resetAction, SIGNAL( triggered() ),
 		   this, SLOT( resetSLOT() ));
 
   addAction( m_titleAction );
