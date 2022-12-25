@@ -81,7 +81,7 @@ void PlotWid::paintEvent( QPaintEvent * )
 {
   if (numItems() == 0) return;
 
-  QTime t;
+  QElapsedTimer t;
   t.start();
 
   QPainter p;
