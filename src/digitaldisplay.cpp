@@ -113,7 +113,7 @@ void DigitalDisplay::calcSize()
   {
 	QFontMetrics fm( m_smallFont );
 	m_minMaxOffset = 16;//std::max( fm.width( "Min:" ), fm.width( "Max:" ) ) + 2;
-	int minW = m_minMaxOffset + fm.width( "dBm" );
+	int minW = m_minMaxOffset + fm.horizontalAdvance( "dBm" );
 	LCDNumber slcd( true, numDigits() );
 
 	m_offset = minW+12+slcd.width();

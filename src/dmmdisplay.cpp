@@ -305,7 +305,7 @@ void DMMDisplay::setMode( const QString & mode )
 void DMMDisplay::computeUnitWidth()
 {
   QFontMetrics fm( m_font );
-  m_uw = fm.width( "dBm" );
+  m_uw = fm.horizontalAdvance( "dBm" );
 }
 
 void DMMDisplay::setColor( const QColor & color )
